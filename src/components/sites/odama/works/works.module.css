@@ -1,0 +1,20 @@
+/* Source button primitives used by the Featured Works chips. */
+.btnBase {
+  border-radius: var(--radius-chip);
+  height: 40px;
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  white-space: nowrap;
+  transition:
+    background-color 0.24s var(--ease-out-quart),
+    color 0.24s var(--ease-out-quart),
+    transform 0.24s var(--ease-out-quart),
+    border-color 0.24s var(--ease-out-quart);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+}

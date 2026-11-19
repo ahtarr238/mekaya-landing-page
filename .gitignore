@@ -47,3 +47,9 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Raw downloads from the clone source (third-party bundles kept local only)
+docs/research/odama/chunks/
+docs/research/odama/*.css
+docs/research/odama/*.html
+docs/research/odama/hero-src.js

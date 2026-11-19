@@ -1,0 +1,31 @@
+/* Source-only utilities for the "Our Value" section (tablet variant, no-scrollbar, word fade-out). */
+.track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.track :global(.why-word-out) {
+  animation: 0.22s ease-in both stream-word-out;
+}
+
+/* tablet: (min-width 768 and max-width 1279) or (min-width 768 and coarse pointer) */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .track {
+    height: auto !important;
+  }
+  .art {
+    aspect-ratio: 1032 / 1272 !important;
+    align-self: flex-start;
+  }
+}
+@media (min-width: 768px) and (pointer: coarse) {
+  .track {
+    height: auto !important;
+  }
+  .art {
+    aspect-ratio: 1032 / 1272 !important;
+    align-self: flex-start;
+  }
+}

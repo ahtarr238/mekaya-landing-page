@@ -1,0 +1,132 @@
+/* Stream-in/out states of the pinned pricing stage (copied from odama.io's compiled CSS). */
+
+/* Plan cards: words typed in/out as a card opens or collapses. */
+.stage [data-pstream="in"] [data-pw] {
+  animation: 0.45s ease-out backwards wordIn;
+}
+.stage [data-pstream="out"] [data-pw] {
+  animation: 0.22s ease-in both wordOut;
+}
+.stage [data-pstream="in"] [data-pr] {
+  animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) both riseIn;
+}
+.stage [data-pstream="out"] [data-pr] {
+  animation: 0.22s ease-in both chevOut;
+}
+
+/* FAQ list: hidden until the "?" dissolves, then streamed in word by word. */
+.stage [data-stream="off"] :is([data-faq-word], [data-faq-chev], [data-faq-line], [data-faq-field], [data-faq-send]) {
+  opacity: 0;
+  animation: none;
+}
+.stage [data-stream="in"] [data-faq-word] {
+  animation: 0.45s ease-out backwards wordIn;
+}
+.stage [data-stream="out"] [data-faq-word] {
+  animation: 0.22s ease-in both wordOut;
+}
+.stage [data-stream="in"] [data-faq-chev] {
+  animation: 0.45s cubic-bezier(0.16, 1, 0.3, 1) both chevIn;
+}
+.stage [data-stream="out"] [data-faq-chev] {
+  animation: 0.22s ease-in both chevOut;
+}
+.stage [data-stream="in"] [data-faq-line] {
+  animation: 0.7s cubic-bezier(0.16, 1, 0.3, 1) both lineIn;
+}
+.stage [data-stream="out"] [data-faq-line] {
+  animation: 0.3s cubic-bezier(0.7, 0, 0.84, 0) both lineOut;
+}
+.stage [data-stream="in"] :is([data-faq-field], [data-faq-send]) {
+  animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) both riseIn;
+}
+.stage [data-stream="out"] :is([data-faq-field], [data-faq-send]) {
+  animation: 0.22s ease-in both chevOut;
+}
+.stage [data-stream="off"] [data-faq-fade] {
+  opacity: 0;
+  animation: none;
+}
+.stage [data-stream="in"] [data-faq-fade] {
+  animation: 0.45s ease-out backwards wordIn;
+}
+.stage [data-stream="out"] [data-faq-fade] {
+  animation: 0.22s ease-in both wordOut;
+}
+.stage :is([data-stream="off"], [data-stream="out"]) button[data-faq-row] {
+  background-color: transparent;
+}
+
+.caret {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5em;
+  height: 1em;
+  border-radius: 2px;
+  background: var(--color-flame);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage [data-pstream] :is([data-pw], [data-pr]),
+  .stage [data-stream] :is([data-faq-word], [data-faq-chev], [data-faq-line], [data-faq-field], [data-faq-send], [data-faq-fade]) {
+    animation: none;
+  }
+  .caret {
+    display: none;
+  }
+  .stage [data-stream="off"],
+  .stage [data-stream="out"] {
+    visibility: hidden;
+  }
+}
+
+@keyframes wordIn {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes wordOut {
+  to {
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+@keyframes riseIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes chevIn {
+  0% {
+    opacity: 0;
+    translate: 0 -6px;
+  }
+}
+@keyframes chevOut {
+  to {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+@keyframes lineIn {
+  0% {
+    transform: scaleX(0);
+  }
+}
+@keyframes lineOut {
+  to {
+    transform: scaleX(0);
+  }
+}

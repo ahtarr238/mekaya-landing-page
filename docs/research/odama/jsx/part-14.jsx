@@ -1,0 +1,1 @@
+<section id="pricing" className="relative bg-bg pricing-stage:bg-transparent" />

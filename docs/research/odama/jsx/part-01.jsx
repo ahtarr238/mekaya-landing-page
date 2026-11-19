@@ -1,0 +1,1 @@
+<header data-nav-boot="" data-cursor-overlay="" data-snapshot-skip="true" className="pointer-events-none fixed inset-x-0 top-0 z-[90] overflow-x-clip page-x pt-[max(0.75rem,env(safe-area-inset-top))] md:pt-[max(1rem,env(safe-area-inset-top))]" />

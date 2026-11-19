@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Downloaded source evidence and vendored decoder (not app code):
+    "docs/research/**",
+    "public/sites/**",
   ]),
 ]);
 
